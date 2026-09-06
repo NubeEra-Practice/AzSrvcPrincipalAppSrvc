@@ -24,6 +24,15 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
+      
+      - name: Check repository files
+        run: |
+          pwd
+          echo "===== Files ====="
+          find . -maxdepth 3 -type f | sort
+          echo "===== Python ====="
+          python --version
+
       # 4. Run tests
       - name: Run tests
         run: |
